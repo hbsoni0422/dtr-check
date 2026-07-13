@@ -1,0 +1,943 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "RespiratoryAssistDevices",
+  "url": "urn:inferno:dtr-test-kit:respiratory-assist-devices",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/cqf-questionnaire",
+      "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-r4"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "2.16.840.1.113762.1.4.1219.129",
+      "url": "#2.16.840.1.113762.1.4.1219.129",
+      "name": "Respiratory Assist Device Supply",
+      "status": "active",
+      "publisher": "CMS Documentation Requirement Lookup Service",
+      "expansion": {
+        "timestamp": "2024-04-01T15:57:01-05:00",
+        "total": 19,
+        "contains": [
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A4604",
+            "display": "Tubing with integrated heating element for use with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7027",
+            "display": "Combination oral/nasal mask, used with continuous positive airway pressure device, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7028",
+            "display": "Oral cushion for combination oral/nasal mask, replacement only, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7029",
+            "display": "Nasal pillows for combination oral/nasal mask, replacement only, pair"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7030",
+            "display": "Full face mask used with positive airway pressure device, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7031",
+            "display": "Face mask interface, replacement for full face mask, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7032",
+            "display": "Cushion for use on nasal mask interface, replacement only, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7033",
+            "display": "Pillow for use on nasal cannula type interface, replacement only, pair"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7034",
+            "display": "Nasal interface (mask or cannula type) used with positive airway pressure device, with or without head strap"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7035",
+            "display": "Headgear used with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7036",
+            "display": "Chinstrap used with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7037",
+            "display": "Tubing used with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7038",
+            "display": "Filter, disposable, used with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7039",
+            "display": "Filter, non disposable, used with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7044",
+            "display": "Oral interface used with positive airway pressure device, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7045",
+            "display": "Exhalation port with or without swivel used with accessories for positive airway devices, replacement only"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "A7046",
+            "display": "Water chamber for humidifier, used with positive airway pressure device, replacement, each"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "E0561",
+            "display": "Humidifier, non-heated, used with positive airway pressure device"
+          },
+          {
+            "system": "https://bluebutton.cms.gov/resources/codesystem/hcpcs",
+            "version": "2024",
+            "code": "E0562",
+            "display": "Humidifier, heated, used with positive airway pressure device"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "administrative-gender",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+          "valueCode": "pa"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode": "normative"
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+          "valueInteger": 5
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+          "valueCode": "4.0.0"
+        }
+      ],
+      "url": "#administrative-gender",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.1"
+        }
+      ],
+      "version": "4.0.0",
+      "name": "AdministrativeGender",
+      "title": "AdministrativeGender",
+      "status": "active",
+      "experimental": false,
+      "date": "2018-12-14T01:14:32+00:00",
+      "publisher": "HL7 (FHIR Project)",
+      "contact": [
+        {
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://hl7.org/fhir"
+            },
+            {
+              "system": "email",
+              "value": "fhir@lists.hl7.org"
+            }
+          ]
+        }
+      ],
+      "description": "The gender of a person used for administrative purposes.",
+      "immutable": true,
+      "compose": {
+        "include": [
+          {
+            "system": "http://hl7.org/fhir/administrative-gender"
+          }
+        ]
+      },
+      "expansion": {
+        "identifier": "urn:uuid:9758a8b3-f741-40f6-b497-1bb7cd611c09",
+        "timestamp": "2020-05-07T17:13:35.193Z",
+        "parameter": [
+          {
+            "name": "expansion-source",
+            "valueString": "ValueSet/administrative-gender"
+          },
+          {
+            "name": "limitedExpansion",
+            "valueBoolean": true
+          },
+          {
+            "name": "displayLanguage",
+            "valueString": "en-US,en;q=0.9"
+          },
+          {
+            "name": "includeDefinition",
+            "valueBoolean": true
+          },
+          {
+            "name": "version",
+            "valueString": "http://hl7.org/fhir/administrative-gender|4.0.0"
+          }
+        ],
+        "contains": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "Male."
+              }
+            ],
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "male",
+            "display": "Male"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "Female."
+              }
+            ],
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "female",
+            "display": "Female"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "Other."
+              }
+            ],
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "other",
+            "display": "Other"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "Unknown."
+              }
+            ],
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "unknown",
+            "display": "Unknown"
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "request-intent",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+        ]
+      },
+      "url": "#request-intent",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:2.16.840.1.113883.4.642.3.113"
+        }
+      ],
+      "version": "4.0.0",
+      "name": "RequestIntent",
+      "title": "RequestIntent",
+      "status": "draft",
+      "experimental": false,
+      "date": "2018-12-14T01:14:32+00:00",
+      "immutable": true,
+      "expansion": {
+        "identifier": "urn:uuid:000b1435-9799-4605-92aa-6f673e0af404",
+        "timestamp": "2020-07-08T16:47:43.763Z",
+        "parameter": [
+          {
+            "name": "expansion-source",
+            "valueString": "ValueSet/request-intent"
+          },
+          {
+            "name": "version",
+            "valueString": "http://hl7.org/fhir/request-intent|4.0.0"
+          }
+        ],
+        "contains": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request is a suggestion made by someone/something that does not have an intention to ensure it occurs and without providing an authorization to act."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "proposal",
+            "display": "Proposal"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents an intention to ensure something occurs without providing an authorization for others to act."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "plan",
+            "display": "Plan"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents a legally binding instruction authored by a Patient or RelatedPerson."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "directive",
+            "display": "Directive"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents a request/demand and authorization for action by a Practitioner."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "order",
+            "display": "Order"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents an original authorization for action."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "original-order",
+            "display": "Original Order"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents an automatically generated supplemental authorization for action based on a parent authorization together with initial results of the action taken against that parent authorization."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "reflex-order",
+            "display": "Reflex Order"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents the view of an authorization instantiated by a fulfilling system representing the details of the fulfiller's intention to act upon a submitted order."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "filler-order",
+            "display": "Filler Order"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "An order created in fulfillment of a broader order that represents the authorization for a single activity occurrence.  E.g. The administration of a single dose of a drug."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "instance-order",
+            "display": "Instance Order"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/valueset-definition",
+                "valueString": "The request represents a component or option for a RequestGroup that establishes timing, conditionality and/or other constraints among a set of requests.  Refer to [[[RequestGroup]]] for additional information on how this status is used."
+              }
+            ],
+            "system": "http://hl7.org/fhir/request-intent",
+            "code": "option",
+            "display": "Option"
+          }
+        ]
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+      "valueCanonical": "http://hl7.org/fhir/us/davinci-dtr/Library/RespiratoryAssistDevices-prepopulation"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+      "valueCanonical": "http://hl7.org/fhir/us/davinci-dtr/Library/BasicPatientInfo-prepopulation"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+      "valueCanonical": "http://hl7.org/fhir/us/davinci-dtr/Library/BasicClinicalInfo-prepopulation"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+      "valueCanonical": "http://hl7.org/fhir/us/davinci-dtr/Library/BasicPractitionerInfo-prepopulation"
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/valueset-reference",
+      "valueReference": {
+        "reference": "#2.16.840.1.113762.1.4.1219.129"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/valueset-reference",
+      "valueReference": {
+        "reference": "#administrative-gender"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/valueset-reference",
+      "valueReference": {
+        "reference": "#request-intent"
+      }
+    }
+  ],
+  "name": "RespiratoryAssistDevices",
+  "title": "Respiratory Assist Device Questionnaire",
+  "status": "draft",
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2020-04-02",
+  "publisher": "Da Vinci DTR",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "gtable"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "PBD",
+      "text": "Patient Information",
+      "type": "group",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPatientInfoPrepopulation\".LastName"
+              }
+            }
+          ],
+          "linkId": "PBD.1",
+          "text": "Last Name:",
+          "type": "string",
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPatientInfoPrepopulation\".FirstName"
+              }
+            }
+          ],
+          "linkId": "PBD.2",
+          "text": "First Name:",
+          "type": "string",
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPatientInfoPrepopulation\".MiddleInitial"
+              }
+            }
+          ],
+          "linkId": "PBD.3",
+          "text": "Middle Initial:",
+          "type": "string",
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPatientInfoPrepopulation\".DateOfBirth"
+              }
+            }
+          ],
+          "linkId": "PBD.4",
+          "text": "Date of Birth:",
+          "type": "date",
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPatientInfoPrepopulation\".Gender"
+              }
+            }
+          ],
+          "linkId": "PBD.5",
+          "text": "Gender",
+          "type": "choice",
+          "answerValueSet": "#administrative-gender"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPatientInfoPrepopulation\".MedicareId"
+              }
+            }
+          ],
+          "linkId": "PBD.6",
+          "text": "Medicare ID:",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "gtable"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "PND",
+      "text": "Provider who performed the in-person evaluation",
+      "type": "group",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicClinicalInfoPrepopulation\".EncounterProviderLastName"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minLength",
+              "valueInteger": 2
+            }
+          ],
+          "linkId": "PND.1",
+          "text": "Last Name",
+          "type": "string",
+          "maxLength": 26
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicClinicalInfoPrepopulation\".EncounterProviderFirstName"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/minLength",
+              "valueInteger": 2
+            }
+          ],
+          "linkId": "PND.2",
+          "text": "First Name",
+          "type": "string",
+          "maxLength": 26
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicClinicalInfoPrepopulation\".EncounterProviderMiddleInitial"
+              }
+            }
+          ],
+          "linkId": "PND.3",
+          "text": "Middle Initial",
+          "type": "string"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicClinicalInfoPrepopulation\".EncounterProviderNPI"
+              }
+            }
+          ],
+          "linkId": "PND.4",
+          "text": "NPI",
+          "type": "string"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicClinicalInfoPrepopulation\".RequestEncounterDate"
+              }
+            }
+          ],
+          "linkId": "PND.5",
+          "text": "Date of F2F encounter",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "3",
+      "text": "Respiratory Assist Device Diagnoses",
+      "type": "group",
+      "item": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"RespiratoryAssistDevicesPrepopulation\".RADCodings"
+              }
+            }
+          ],
+          "linkId": "3.1",
+          "text": "Patient diagnoses for order",
+          "type": "open-choice",
+          "required": false,
+          "repeats": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"RespiratoryAssistDevicesPrepopulation\".OtherDiagnosesCodings"
+              }
+            }
+          ],
+          "linkId": "3.2",
+          "text": "Other Diagnoses:",
+          "type": "open-choice",
+          "repeats": true
+        }
+      ]
+    },
+    {
+      "linkId": "4",
+      "text": "RAD for OSA Order Information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "4.1",
+          "text": "Start date if different from order date",
+          "type": "date",
+          "required": false
+        },
+        {
+          "linkId": "4.2",
+          "text": "Type of Device Order",
+          "type": "open-choice",
+          "required": true,
+          "answerValueSet": "#request-intent"
+        },
+        {
+          "linkId": "4.3",
+          "text": "Type of Supply Order",
+          "type": "open-choice",
+          "required": true,
+          "answerValueSet": "#request-intent"
+        },
+        {
+          "linkId": "4.4",
+          "text": "If Other, describe",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "4.3",
+              "operator": "=",
+              "answerCoding": {
+                "code": "Other"
+              }
+            }
+          ],
+          "required": true
+        },
+        {
+          "linkId": "4.5",
+          "text": "Device Order (description of device)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "4.6",
+          "text": "Specific Device",
+          "type": "group",
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/cql",
+                    "expression": "\"RespiratoryAssistDevicesPrepopulation\".RadDeviceRequested"
+                  }
+                }
+              ],
+              "linkId": "4.6.1",
+              "text": "Specify",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "E0470",
+                    "display": "E0470 - Respiratory assist device, bi-level without backup rate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "E0471",
+                    "display": "E0471 - Respiratory assist device, bi-level with backup rate (not covered for OSA)"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "4.6.2",
+              "text": "Note:  RAD (E0470 and E0471) require Written Order Prior to Delivery and F2F Evaluation",
+              "type": "display"
+            },
+            {
+              "linkId": "4.6.3",
+              "text": "Note:  E0471 is not covered for OSA",
+              "type": "display",
+              "enableWhen": [
+                {
+                  "question": "4.6.1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "E0471"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "gtable"
+                  }
+                ]
+              }
+            }
+          ],
+          "linkId": "4.7",
+          "text": "Supply",
+          "type": "group",
+          "repeats": true,
+          "item": [
+            {
+              "linkId": "4.7.1",
+              "text": "Order",
+              "type": "choice",
+              "answerValueSet": "#2.16.840.1.113762.1.4.1219.129"
+            },
+            {
+              "linkId": "4.7.2",
+              "text": "Item Description",
+              "type": "string"
+            },
+            {
+              "linkId": "4.7.3",
+              "text": "Frequency",
+              "type": "string"
+            },
+            {
+              "linkId": "4.7.4",
+              "text": "Duration",
+              "type": "string"
+            },
+            {
+              "linkId": "4.7.5",
+              "text": "Quantity",
+              "type": "string"
+            },
+            {
+              "linkId": "4.7.6",
+              "text": "Refills",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "gtable"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "SIGPNP",
+      "text": "Provider Signature",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "SIGPNP.1",
+          "text": "Signature",
+          "type": "string",
+          "required": true,
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                "valueString": "color:green;"
+              }
+            ]
+          }
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPractitionerInfoPrepopulation\".FullName"
+              }
+            }
+          ],
+          "linkId": "SIGPNP.2",
+          "text": "Name (Printed)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPractitionerInfoPrepopulation\".Today"
+              }
+            }
+          ],
+          "linkId": "SIGPNP.3",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "\"BasicPractitionerInfoPrepopulation\".NPI"
+              }
+            }
+          ],
+          "linkId": "SIGPNP.4",
+          "text": "NPI",
+          "type": "string",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="DtrCheck.Api/DtrCheck.Api.csproj" />
+  <Project Path="DtrCheck.Core.Tests/DtrCheck.Core.Tests.csproj" />
+  <Project Path="DtrCheck.Core/DtrCheck.Core.csproj" />
+</Solution>

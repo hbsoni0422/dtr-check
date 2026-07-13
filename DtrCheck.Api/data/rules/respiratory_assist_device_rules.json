@@ -1,0 +1,40 @@
+{
+  "questionnaire": "RespiratoryAssistDevices",
+  "description": "Evidence mapping for the DTR Respiratory Assist Device questionnaire. PBD.1-PBD.6, 3.1, and 3.2 execute the questionnaire's own embedded CQL prepopulation expressions (see data/cql/) against the patient's chart. 4.2/4.5 remain keyword_search since they depend on narrative clinical-note text, not coded data -- CQL isn't the right tool for that. Items with no rule (PND.*, SIGPNP.*, 4.1, 4.3, 4.4, 4.6.*, 4.7.*) require ordering-provider or order-form data not present in a patient chart, and are reported as 'not_applicable' rather than 'gap'.",
+  "rules": {
+    "PBD.1": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "LastName" },
+    "PBD.2": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "FirstName" },
+    "PBD.3": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "MiddleInitial" },
+    "PBD.4": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "DateOfBirth" },
+    "PBD.5": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "Gender" },
+    "PBD.6": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "MedicareId" },
+
+    "3.1": {
+      "type": "cql",
+      "library": "RespiratoryAssistDevicesPrepopulation",
+      "version": "1.0.0",
+      "expression": "RADCodings",
+      "description": "Diagnoses supporting the device order"
+    },
+    "3.2": {
+      "type": "cql",
+      "library": "RespiratoryAssistDevicesPrepopulation",
+      "version": "1.0.0",
+      "expression": "OtherDiagnosesCodings",
+      "description": "Comorbidities/other diagnoses (obesity, hypertension, CHF, neuromuscular disease) supporting medical necessity of a RAD over a standard CPAP -- matched against a coded ICD-10 valueset, not free text"
+    },
+
+    "4.2": {
+      "type": "keyword_search",
+      "resourceType": "DocumentReference",
+      "keywords": ["respiratory assist device", "RAD", "bilevel", "backup rate"],
+      "description": "Type of device order (bilevel w/ or w/o backup rate)"
+    },
+    "4.5": {
+      "type": "keyword_search",
+      "resourceType": "DocumentReference",
+      "keywords": ["respiratory assist device", "RAD", "bilevel"],
+      "description": "Device order description"
+    }
+  }
+}

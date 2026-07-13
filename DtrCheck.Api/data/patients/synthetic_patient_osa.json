@@ -1,0 +1,95 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "synthetic-patient-001",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-medicare",
+            "value": "9EX9-XY9-XY99"
+          }
+        ],
+        "name": [
+          {
+            "family": "Doe",
+            "given": ["Jane"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1958-04-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-osa",
+        "subject": { "reference": "Patient/synthetic-patient-001" },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "G47.33",
+              "display": "Obstructive sleep apnea (adult) (pediatric)"
+            }
+          ],
+          "text": "Obstructive sleep apnea"
+        },
+        "onsetDateTime": "2025-11-02",
+        "recordedDate": "2025-11-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-sleep-study-ahi",
+        "status": "final",
+        "subject": { "reference": "Patient/synthetic-patient-001" },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "90562-0",
+              "display": "Apnea hypopnea index (AHI)"
+            }
+          ],
+          "text": "Apnea Hypopnea Index (sleep study)"
+        },
+        "effectiveDateTime": "2025-11-10",
+        "valueQuantity": {
+          "value": 22.4,
+          "unit": "events/hour",
+          "system": "http://unitsofmeasure.org",
+          "code": "/h"
+        },
+        "note": [
+          {
+            "text": "In-lab polysomnography confirms AHI 22.4 events/hour, consistent with moderate obstructive sleep apnea."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "docref-clinical-note",
+        "status": "current",
+        "subject": { "reference": "Patient/synthetic-patient-001" },
+        "type": {
+          "text": "Sleep medicine consult note"
+        },
+        "date": "2025-11-15T00:00:00Z",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "UGF0aWVudCB0cmlhbGVkIENQQVAgYnV0IHJlcG9ydHMgcG9vciB0b2xlcmFuY2UgZHVlIHRvIGNsYXVzdHJvcGhvYmlhLiBSZWNvbW1lbmQgdHJpYWwgb2YgYmlsZXZlbCByZXNwaXJhdG9yeSBhc3Npc3QgZGV2aWNlIChSQUQpIHdpdGhvdXQgYmFja3VwIHJhdGUu"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

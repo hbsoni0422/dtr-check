@@ -1,0 +1,6 @@
+@DtrCheck.Api_HostAddress = http://localhost:5133
+
+GET {{DtrCheck.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

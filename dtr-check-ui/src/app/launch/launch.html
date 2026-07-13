@@ -1,0 +1,36 @@
+<main>
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12.5l2 2 4-4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <span>dtr-check</span>
+  </div>
+  <h1>Connect to a FHIR server</h1>
+  <p class="sub">
+    Standalone SMART on FHIR launch. Defaults point at the public
+    <a href="https://launch.smarthealthit.org" target="_blank" rel="noopener">SMART Health IT sandbox</a>
+    &mdash; synthetic patients only, safe to use for testing.
+  </p>
+  <div class="card">
+    <form (ngSubmit)="launch()">
+      <div class="field">
+        <label for="iss">FHIR server base URL (issuer)</label>
+        <input type="url" id="iss" name="iss" [ngModel]="iss()" (ngModelChange)="iss.set($event)" required />
+      </div>
+      <div class="field">
+        <label for="clientId">Client ID</label>
+        <input type="text" id="clientId" name="clientId" [ngModel]="clientId()" (ngModelChange)="clientId.set($event)" required />
+        <div class="hint">The sandbox launcher accepts any client ID for open testing.</div>
+      </div>
+      <div class="field">
+        <label for="scope">Scope</label>
+        <input type="text" id="scope" name="scope" [ngModel]="scope()" (ngModelChange)="scope.set($event)" required />
+      </div>
+      <button type="submit">Launch</button>
+    </form>
+    @if (status()) {
+      <div class="status">{{ status() }}</div>
+    }
+  </div>
+  <a class="back-link" routerLink="/">&larr; Back to dtr-check</a>
+</main>

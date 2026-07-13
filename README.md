@@ -1,3 +1,4 @@
+#OpenDTR: Open-Source Da Vinci DTR Engine & CQL Reference Implementation
 # dtr-check (.NET + Angular)
 
 > **Status: sandbox project.** Shared open source for anyone to read, use, or learn from — but it's a personal experiment, not a maintained/supported product. Expect breaking changes and no guarantees.
@@ -8,9 +9,15 @@ This is a from-scratch .NET/Angular port of the original [Node.js dtr-check](htt
 
 ## What this is (and isn't)
 
+An open-source, self-hostable, and native SMART on FHIR application designed to execute real HL7 Da Vinci Documentation Templates and Rules (DTR) workflows.Unlike black-box commercial tools that simulate policy rules, OpenDTR compiles and executes actual Clinical Quality Language (CQL) and Expression Logical Model (ELM) payloads using the Firely SDK. It cross-references real-time EHR patient charts against payer-authored medical policies to flag missing prior-authorization documentation before submission.
+
 - Real CQL execution against real FHIR data (Firely `Hl7.Fhir.R4` + `Hl7.Cql.*` NuGet packages), producing results verified to match the original Node.js implementation exactly for the bundled sample patient.
 - Not compliance- or security-hardened. The API has no authentication and is meant for local use.
 - Not affiliated with HL7, CMS, or the Da Vinci Project.
+
+- Visual Architecture Overview
+<img width="493" height="463" alt="image" src="https://github.com/user-attachments/assets/ba45f9bb-9e34-4f11-95ae-5d3280d55788" />
+
 
 ## Project layout
 

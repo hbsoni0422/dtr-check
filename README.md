@@ -1,5 +1,7 @@
 # dtr-check (.NET + Angular)
 
+> **Status: sandbox project.** Shared open source for anyone to read, use, or learn from — but it's a personal experiment, not a maintained/supported product. Expect breaking changes and no guarantees.
+
 A .NET + Angular implementation of **dtr-check**: checks a patient's FHIR chart data against a [Da Vinci DTR](https://build.fhir.org/ig/HL7/davinci-dtr/) prior-authorization questionnaire and reports which required documentation is missing before the request is submitted.
 
 This is a from-scratch .NET/Angular port of the original [Node.js dtr-check](https://github.com/hbsoni0422) project, built to run genuine CQL (Clinical Quality Language) via the official [Firely CQL SDK](https://github.com/FirelyTeam/firely-cql-sdk) — CQL/ELM compiled and executed for real, not approximated.

@@ -13,6 +13,7 @@
   --accent-ink: #ffffff;
 
   --good-rgb: 12, 163, 12;
+  --warn-rgb: 199, 141, 22;
   --critical: #d03b3b;
   --critical-rgb: 208, 59, 59;
   --muted-rgb: 137, 135, 129;
@@ -156,8 +157,11 @@ main { display: block; max-width: 1040px; margin: 0 auto; padding: 2rem 2rem 4re
 .meter-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.55rem; }
 .meter-top .meter-label { font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); }
 .meter-top .meter-pct { font-size: 0.95rem; font-weight: 700; font-variant-numeric: tabular-nums; }
-.meter-track { height: 8px; border-radius: 999px; background: rgba(var(--good-rgb), 0.14); overflow: hidden; }
-.meter-fill { height: 100%; border-radius: 999px; background: rgb(var(--good-rgb)); width: 0%; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.meter-track { height: 8px; border-radius: 999px; background: var(--gridline); overflow: hidden; }
+.meter-fill { height: 100%; border-radius: 999px; width: 0%; transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease; }
+.meter-fill--low { background: rgb(var(--critical-rgb)); }
+.meter-fill--mid { background: rgb(var(--warn-rgb)); }
+.meter-fill--high { background: rgb(var(--good-rgb)); }
 
 .panel-alert, .panel-success { border-radius: var(--radius-md); padding: 1rem 1.15rem; margin-bottom: 1.25rem; border: 1px solid; }
 .panel-alert { background: rgba(var(--critical-rgb), 0.06); border-color: rgba(var(--critical-rgb), 0.25); }

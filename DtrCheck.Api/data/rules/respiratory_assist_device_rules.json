@@ -4,7 +4,7 @@
   "rules": {
     "PBD.1": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "LastName" },
     "PBD.2": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "FirstName" },
-    "PBD.3": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "MiddleInitial" },
+    "PBD.3": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "MiddleInitial", "optional": true, "description": "Middle initial is not always present -- a patient with no middle name is a valid answer, not a documentation gap" },
     "PBD.4": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "DateOfBirth" },
     "PBD.5": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "Gender" },
     "PBD.6": { "type": "cql", "library": "BasicPatientInfoPrepopulation", "version": "1.0.0", "expression": "MedicareId" },

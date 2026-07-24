@@ -15,6 +15,8 @@ const FILE_LABELS: Record<FileKind, string> = {
   rules: 'Rules',
 };
 
+const STORAGE_KEY = 'dtr-check:docs';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -50,9 +52,35 @@ export class Dashboard {
     const applicable = this.applicableCount();
     return applicable > 0 ? Math.round((this.answeredCount() / applicable) * 100) : 100;
   });
+  readonly completenessLevel = computed<'low' | 'mid' | 'high'>(() => {
+    const pct = this.completenessPct();
+    return pct >= 90 ? 'high' : pct >= 50 ? 'mid' : 'low';
+  });
 
   constructor() {
+    const restored = this.restoreDocs();
+    if (restored) {
+      this.loadedDocs = restored;
+      this.setStatus('Restored previously loaded data from browser storage. Click "Run check".', 'success');
+    }
     this.trySmartLaunch();
+  }
+
+  private persistDocs(docs: EvaluateRequest): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(docs));
+    } catch {
+      // localStorage unavailable (private browsing, quota exceeded) -- caching is best-effort.
+    }
+  }
+
+  private restoreDocs(): EvaluateRequest | null {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? (JSON.parse(raw) as EvaluateRequest) : null;
+    } catch {
+      return null;
+    }
   }
 
   private setStatus(message: string, kind: StatusKind = ''): void {
@@ -65,6 +93,7 @@ export class Dashboard {
     try {
       const sample = await firstValueFrom(this.api.getSample());
       this.loadedDocs = sample;
+      this.persistDocs(sample);
       this.selectedFiles.set({});
       this.setStatus('Sample data loaded (synthetic OSA patient). Click "Run check".', 'success');
     } catch (err) {
@@ -139,6 +168,7 @@ export class Dashboard {
         this.loadedDocs = null;
       }
       if (!docs) throw new Error('No data loaded. Choose files or click "Load sample data".');
+      this.persistDocs(docs);
 
       const response = await firstValueFrom(this.api.evaluate(docs));
       this.result.set(response);
@@ -187,6 +217,7 @@ export class Dashboard {
 
       const sample = await firstValueFrom(this.api.getSample());
       this.loadedDocs = { ...sample, patient: bundle };
+      this.persistDocs(this.loadedDocs);
       this.selectedFiles.set({});
       this.setStatus(`Connected via SMART — loaded patient ${patient.id}. Click "Run check".`, 'success');
     } catch (err) {

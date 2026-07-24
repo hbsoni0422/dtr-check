@@ -108,7 +108,9 @@ public sealed class Matcher(CqlEngine cqlEngine)
 
         if (result is null)
         {
-            return Gap(item, $"CQL expression \"{rule.Library}.{rule.Expression}\" returned no value.");
+            return rule.Optional
+                ? Answered(item, value: string.Empty)
+                : Gap(item, $"CQL expression \"{rule.Library}.{rule.Expression}\" returned no value.");
         }
 
         if (result is IEnumerable enumerable and not string)
@@ -116,7 +118,9 @@ public sealed class Matcher(CqlEngine cqlEngine)
             var evidence = enumerable.Cast<object>().Select(SummarizeResource).ToList();
             if (evidence.Count == 0)
             {
-                return Gap(item, $"CQL expression \"{rule.Library}.{rule.Expression}\" returned no results.");
+                return rule.Optional
+                    ? Answered(item, value: string.Empty)
+                    : Gap(item, $"CQL expression \"{rule.Library}.{rule.Expression}\" returned no results.");
             }
             return Answered(item, evidence: evidence);
         }
@@ -124,7 +128,9 @@ public sealed class Matcher(CqlEngine cqlEngine)
         var formatted = FormatValue(result);
         if (string.IsNullOrEmpty(formatted))
         {
-            return Gap(item, $"CQL expression \"{rule.Library}.{rule.Expression}\" returned no value.");
+            return rule.Optional
+                ? Answered(item, value: string.Empty)
+                : Gap(item, $"CQL expression \"{rule.Library}.{rule.Expression}\" returned no value.");
         }
         return Answered(item, value: formatted);
     }

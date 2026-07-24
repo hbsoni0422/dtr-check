@@ -31,4 +31,11 @@ public sealed class RuleDefinition
 
     /// <summary>Documentation only, not consumed by the evaluator.</summary>
     public string? Description { get; init; }
+
+    /// <summary>
+    /// When true, an empty/null result is a legitimate answer (e.g. a patient with
+    /// no middle name) rather than missing documentation -- resolved as Answered
+    /// with an empty value instead of Gap.
+    /// </summary>
+    public bool Optional { get; init; }
 }

@@ -10,7 +10,7 @@ define LastName: Patient.name[0].family.value
 define FirstName: Patient.name[0].given[0].value
 
 define MiddleInitial:
-  if Count(Patient.name[0].given) > 1 then Substring(Patient.name[0].given[1].value, 0, 1) else null
+  if Count(Patient.name[0].given) > 1 then Substring(Patient.name[0].given[1].value, 0, 1) else ''
 
 define Gender: Patient.gender.value
 define DateOfBirth: Patient.birthDate.value
